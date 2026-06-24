@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment - Jasper Salon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">JASPER HAIR SALON AND STYLING SERVICES</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="booking.html" class="active">My Bookings</a>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="overlay">
+        <div class="login-box" style="max-width: 550px; margin: 20px 0;">
+            <h2>BOOK APPOINTMENT</h2>
+            <form id="bookingForm">
+                
+                <div class="booking-section">
+                    <h4 style="color: #ffcc00; margin-bottom: 10px;">PRIMARY SERVICE</h4>
+                    <select id="service1" required>
+                        <option value="" disabled selected>Select First Service</option>
+                        <optgroup label="Men's Services">
+                            <option value="Men: Classic Fade">Classic Fade - ₹499</option>
+                            <option value="Men: Beard Sculpting">Beard Sculpting - ₹299</option>
+                            <option value="Men: Executive Buzz">Executive Buzz - ₹399</option>
+                            <option value="Men: Grey Blending">Grey Blending - ₹899</option>
+                            <option value="Men: Head Massage">Head Massage - ₹599</option>
+                            <option value="Men: Face Cleanup">Face Cleanup - ₹799</option>
+                            <option value="Men: Straightening">Straightening - ₹1499</option>
+                            <option value="Men: Royal Shave">Royal Shave - ₹349</option>
+                        </optgroup>
+                        <optgroup label="Women's Services">
+                            <option value="Women: Layered Cut">Layered Cut - ₹999</option>
+                            <option value="Women: Global Color">Global Color - ₹2499</option>
+                            <option value="Women: Keratin">Keratin Treatment - ₹4999</option>
+                            <option value="Women: Bridal Makeup">Bridal Makeup - ₹7999</option>
+                            <option value="Women: Hair Spa">Hair Spa - ₹1299</option>
+                            <option value="Women: Eyebrow Shaping">Eyebrow Shaping - ₹149</option>
+                            <option value="Women: Balayage">Balayage - ₹3499</option>
+                            <option value="Women: Mani-Pedi">Luxury Mani-Pedi - ₹1199</option>
+                        </optgroup>
+                    </select>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="date" id="date1" required>
+                        <select id="time1" required>
+                            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                            <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                            <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="booking-section">
+                    <h4 style="color: #ffcc00; margin-bottom: 10px;">ADD SECOND SERVICE (OPTIONAL)</h4>
+                    <select id="service2">
+                        <option value="None" selected>No Second Service</option>
+                        <optgroup label="Men's Services">
+                            <option value="Men: Classic Fade">Classic Fade - ₹499</option>
+                            <option value="Men: Beard Sculpting">Beard Sculpting - ₹299</option>
+                            <option value="Men: Executive Buzz">Executive Buzz - ₹399</option>
+                            <option value="Men: Grey Blending">Grey Blending - ₹899</option>
+                            <option value="Men: Head Massage">Head Massage - ₹599</option>
+                            <option value="Men: Face Cleanup">Face Cleanup - ₹799</option>
+                            <option value="Men: Straightening">Straightening - ₹1499</option>
+                            <option value="Men: Royal Shave">Royal Shave - ₹349</option>
+                        </optgroup>
+                        <optgroup label="Women's Services">
+                            <option value="Women: Layered Cut">Layered Cut - ₹999</option>
+                            <option value="Women: Global Color">Global Color - ₹2499</option>
+                            <option value="Women: Keratin">Keratin Treatment - ₹4999</option>
+                            <option value="Women: Bridal Makeup">Bridal Makeup - ₹7999</option>
+                            <option value="Women: Hair Spa">Hair Spa - ₹1299</option>
+                            <option value="Women: Eyebrow Shaping">Eyebrow Shaping - ₹149</option>
+                            <option value="Women: Balayage">Balayage - ₹3499</option>
+                            <option value="Women: Mani-Pedi">Luxury Mani-Pedi - ₹1199</option>
+                        </optgroup>
+                    </select>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="date" id="date2">
+                        <select id="time2">
+                            <option value="N/A">Select Time (Optional)</option>
+                            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                            <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                            <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" style="margin-top: 25px;">CONFIRM APPOINTMENT</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
