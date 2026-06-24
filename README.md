@@ -9,8 +9,7 @@
 **A premium, web-based salon management and styling service platform featuring an obsidian-themed interface, intuitive sidebar-driven navigation, and real-time cloud synchronization.**
 
 ## 🚀 Live Links
-- **Live Application (Vercel):** [👉 Access the Live App Here](https://your-project-name.vercel.app) *(Replace with your actual Vercel URL)*
-- **Backend Infrastructure:** Powered by [Firebase](https://firebase.google.com/) *(Authentication & Real-time Database)*
+- **Live Application (Vercel):** [👉 Access the Live App Here](https://jasper-hair-styling.vercel.app/)
 
 ## ✨ Key Features
 - **Obsidian-Themed UI:** A clean, professional, and visually striking dark-themed aesthetic.
